@@ -28,7 +28,7 @@ class WeatherDataViewModel {
     }
     
     func getSectionAmount() -> Int {
-        SectionsType.getAmountOfSections()
+        CellDetails.getAmountOfSections()
     }
 }
 

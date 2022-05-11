@@ -79,14 +79,14 @@ class LoadViewModel {
     func locationDisabledDescriptionAlertInitialization() {
         switch isLocationServiceEnabled.value {
         case false:
-            locationDisabledDescriptionAlert.value = UIAlertController(title: "Your location isn't enabled", message: "Do you want activate location?", preferredStyle: .alert)
+            locationDisabledDescriptionAlert.value = UIAlertController(title: AlertsTitle.descriptionTitle.title, message: AlertsTitle.requestTitle.title, preferredStyle: .alert)
             
-            let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+            let settingsAction = UIAlertAction(title: AlertsTitle.settings.title, style: .default) { _ in
                 guard let url = URL(string: "App-Prefs:root=LOCATION_SERVICES") else { return }
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: AlertsTitle.cancel.title, style: .cancel, handler: nil)
             
             locationDisabledDescriptionAlert.value?.addAction(settingsAction)
             locationDisabledDescriptionAlert.value?.addAction(cancelAction)

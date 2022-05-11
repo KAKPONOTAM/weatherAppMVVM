@@ -123,7 +123,7 @@ class WeatherDataViewController: UIViewController {
 
 extension WeatherDataViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cell = SectionsType.getRow(index: section)
+        let cell = CellDetails.getRow(index: section)
         
         switch cell {
         case .current:
@@ -139,7 +139,7 @@ extension WeatherDataViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = SectionsType.getRow(index: indexPath.row)
+        let cell = CellDetails.getRow(index: indexPath.row)
         switch cell {
         case .current:
             guard let currentWeatherCell = tableView.dequeueReusableCell(withIdentifier: CurrentWeatherTableViewCell.identifier, for: indexPath) as? CurrentWeatherTableViewCell else { return UITableViewCell() }
@@ -179,7 +179,7 @@ extension WeatherDataViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cell = SectionsType.getRow(index: indexPath.row)
+        let cell = CellDetails.getRow(index: indexPath.row)
         
         switch cell {
         case .current:
@@ -198,7 +198,7 @@ extension WeatherDataViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let cellsTitle = SectionsType.getRow(index: section).titleForRow
+        let cellsTitle = CellDetails.getRow(index: section).titleForRow
         
         return cellsTitle
     }

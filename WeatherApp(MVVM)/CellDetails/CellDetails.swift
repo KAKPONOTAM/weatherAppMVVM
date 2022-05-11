@@ -1,6 +1,6 @@
 import Foundation
 
-enum SectionsType: Int, CaseIterable {
+enum CellDetails: Int, CaseIterable {
     case current
     case hourly
     case weekly
