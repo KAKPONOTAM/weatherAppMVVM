@@ -1,7 +1,12 @@
 import Foundation
 
-class HourlyWeatherDescription: Decodable {
-    var dt: Int?
-    var temp: Double?
-    var weather: [HourlyWeatherImageDescription]?
+struct HourlyWeatherDescription: Decodable {
+    let dt: Int
+    let temp: Double
+    let weather: [HourlyWeatherImageDescription]
 }
+
+struct HourlyWeatherImageDescription: Decodable {
+    let icon: String
+}
+

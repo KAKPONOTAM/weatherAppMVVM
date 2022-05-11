@@ -1,6 +1,12 @@
 import Foundation
 
-class CityNamesData: Decodable {
-    var city: [CityNames]?
+struct CityNamesData: Decodable {
+    var city: [CityNames]
 }
+
+
+struct CityNames: Decodable {
+    var name: String
+}
+
 

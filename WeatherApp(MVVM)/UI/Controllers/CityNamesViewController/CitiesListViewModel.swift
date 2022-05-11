@@ -14,16 +14,15 @@ class CitiesListViewModel {
     func getCitiesList() {
         CitiesJSONAutoParts.shared.citiesJSONAutoParts { [weak self] citiesList in
             guard let citiesList = citiesList,
-                  let self = self,
-                  let cityNames = citiesList.city else  { return }
+                  let self = self else  { return }
             
             self.citiesList.value = citiesList
-            self.cityNamesData.value = cityNames
+            self.cityNamesData.value = citiesList.city
         }
         
         guard let citiesListValue = citiesList.value?.city else { return }
         
-        cityNames.value = citiesListValue.map { $0.name ?? "" }
+        cityNames.value = citiesListValue.map { $0.name }
         filteredCityNames.value = cityNames.value
     }
     

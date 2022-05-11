@@ -9,12 +9,12 @@ class DailyWeatherViewModel {
     var weatherImageDescription = Bindable<UIImage?>(nil)
     
     func configureDailyWeatherData(with weeklyWeatherData: WeeklyWeatherData, indexPath: IndexPath) {
-        guard let iconId = weeklyWeatherData.daily?[indexPath.row].weather?.first?.icon,
+        guard let iconId = weeklyWeatherData.daily?[indexPath.row].weather.first?.icon,
               let iconUrl = URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png"),
               let weekDay = weeklyWeatherData.daily?[indexPath.row].dt,
-              let temperature = weeklyWeatherData.daily?[indexPath.row].temp?.day,
-              let maximalTemperature = weeklyWeatherData.daily?[indexPath.row].temp?.max,
-              let minimalTemperature = weeklyWeatherData.daily?[indexPath.row].temp?.min else { return }
+              let temperature = weeklyWeatherData.daily?[indexPath.row].temp.day,
+              let maximalTemperature = weeklyWeatherData.daily?[indexPath.row].temp.max,
+              let minimalTemperature = weeklyWeatherData.daily?[indexPath.row].temp.min else { return }
         
         KingfisherManager.shared.retrieveImage(with: iconUrl, options: nil, progressBlock: nil) { result in
                switch result {

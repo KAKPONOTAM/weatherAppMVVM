@@ -12,7 +12,7 @@ class HourlyWeatherCollectionViewModel {
     
     func configureHourlyWeatherData(hourlyData: WeeklyWeatherData, indexPath: IndexPath) {
         guard let date = hourlyData.hourly?[indexPath.item].dt,
-              let hourWeatherIconId = hourlyData.hourly?[indexPath.item].weather?.first?.icon,
+              let hourWeatherIconId = hourlyData.hourly?[indexPath.item].weather.first?.icon,
               let hourWeatherDescriptionIconIdUrl = URL(string: "https://openweathermap.org/img/wn/\(hourWeatherIconId)@2x.png"),
               let timezoneOffset = hourlyData.timezone_offset,
               let temperature = hourlyData.hourly?[indexPath.item].temp else { return }
