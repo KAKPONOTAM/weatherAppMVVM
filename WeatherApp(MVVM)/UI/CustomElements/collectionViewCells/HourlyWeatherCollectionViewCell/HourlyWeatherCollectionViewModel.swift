@@ -3,7 +3,6 @@ import UIKit
 import Kingfisher
 
 class HourlyWeatherCollectionViewModel {
-    var identifier = Bindable("HourlyWeatherCollectionViewModel")
     var weatherImageDescription = Bindable<UIImage?>(nil)
     var date = Bindable<Int?>(nil)
     var weatherHour = Bindable<String?>(nil)

@@ -5,7 +5,6 @@ import Kingfisher
 class CurrentWeatherViewModel {
     var currentWeather = Bindable<CurrentWeatherInfo?>(nil)
     var weatherImageDescription = Bindable<UIImage?>(nil)
-    var identifier = Bindable("HourlyWeatherCollectionViewModel")
     var temperature = Bindable<Int?>(nil)
     var temperatureFeelsLike = Bindable<Int?>(nil)
     var maximalTemperature = Bindable<Int?>(nil)

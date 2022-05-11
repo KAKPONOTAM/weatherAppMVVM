@@ -13,7 +13,7 @@ class CitiesListViewController: UIViewController {
         return tableView
     }()
     
-    private let searchTextField: UISearchTextField = {
+    private lazy var searchTextField: UISearchTextField = {
         let textField = UISearchTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "search"

@@ -1,7 +1,6 @@
 import UIKit
 
 class SunriseAndSunsetTableViewCell: UITableViewCell {
-    static let identifier = "SunriseAndSunsetTableViewCell"
     let viewModel = SunriseAndSunsetViewModel()
     
     private let sunriseAndSunsetTableViewCellInfoContainer: UIVisualEffectView = {
@@ -15,21 +14,19 @@ class SunriseAndSunsetTableViewCell: UITableViewCell {
     private let sunsetInfoContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = LayerManager.shared.cornerRadius
         return view
     }()
     
     private let sunriseInfoContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = LayerManager.shared.cornerRadius
         return view
     }()
     
     private let sunsetImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "sunset")
+        imageView.image = Images.sunsetImage.titleImage
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -38,7 +35,7 @@ class SunriseAndSunsetTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "sunrise")
+        imageView.image = Images.sunriseImage.titleImage
         return imageView
     }()
     
@@ -68,7 +65,7 @@ class SunriseAndSunsetTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     //MARK: - methods

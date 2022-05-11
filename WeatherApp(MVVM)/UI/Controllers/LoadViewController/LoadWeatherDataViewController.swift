@@ -12,7 +12,7 @@ class LoadWeatherDataViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "greetingImage")
+        imageView.image = Images.loadViewControllerTitleImage.titleImage
         imageView.startAnimating()
         return imageView
     }()

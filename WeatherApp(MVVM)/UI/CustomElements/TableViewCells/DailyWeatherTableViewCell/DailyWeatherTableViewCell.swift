@@ -2,7 +2,6 @@ import UIKit
 import Kingfisher
 
 class DailyWeatherTableViewCell: UITableViewCell {
-    static let identifier = "DailyWeatherTableViewCell"
     let viewModel = DailyWeatherViewModel()
     
     private let dailyWeatherContainer: UIVisualEffectView = {
@@ -67,14 +66,8 @@ class DailyWeatherTableViewCell: UITableViewCell {
         
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0))
-    }
-    
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     //MARK: - methods

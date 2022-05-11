@@ -7,7 +7,6 @@ class DailyWeatherViewModel {
     var minimalTemperature = Bindable<Int?>(nil)
     var temperature = Bindable<Int?>(nil)
     var weatherImageDescription = Bindable<UIImage?>(nil)
-    var identifier = Bindable("HourlyWeatherCollectionViewModel")
     
     func configureDailyWeatherData(with weeklyWeatherData: WeeklyWeatherData, indexPath: IndexPath) {
         guard let iconId = weeklyWeatherData.daily?[indexPath.row].weather?.first?.icon,

@@ -1,8 +1,8 @@
+import Foundation
 import UIKit
 import Kingfisher
 
 class CurrentWeatherTableViewCell: UITableViewCell {
-    static let identifier = "CurrentWeatherTableViewCell"
     let viewModel = CurrentWeatherViewModel()
     
     private let currentWeatherInfoContainer: UIVisualEffectView = {
@@ -214,3 +214,4 @@ class CurrentWeatherTableViewCell: UITableViewCell {
         }
     }
 }
+

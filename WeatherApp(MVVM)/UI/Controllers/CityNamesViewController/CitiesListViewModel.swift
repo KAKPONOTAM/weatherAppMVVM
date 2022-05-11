@@ -15,7 +15,7 @@ class CitiesListViewModel {
         CitiesJSONAutoParts.shared.citiesJSONAutoParts { [weak self] citiesList in
             guard let citiesList = citiesList,
                   let self = self,
-                      let cityNames = citiesList.city else  { return }
+                  let cityNames = citiesList.city else  { return }
             
             self.citiesList.value = citiesList
             self.cityNamesData.value = cityNames
@@ -23,11 +23,7 @@ class CitiesListViewModel {
         
         guard let citiesListValue = citiesList.value?.city else { return }
         
-        for value in citiesListValue {
-            guard let cityName = value.name else { return }
-            cityNames.value.append(cityName)
-        }
-        
+        cityNames.value = citiesListValue.map { $0.name ?? "" }
         filteredCityNames.value = cityNames.value
     }
     
@@ -36,7 +32,7 @@ class CitiesListViewModel {
         
         switch textFieldText.isEmpty {
         case true:
-            filteredCityNames.value = []
+            filteredCityNames.value = cityNames.value
             
         case false:
             filteredCityNames.value = cityNames.value.filter { $0.lowercased().contains(textFieldText.lowercased()) }

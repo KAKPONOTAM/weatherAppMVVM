@@ -2,7 +2,6 @@ import UIKit
 import Kingfisher
 
 class HourlyWeatherCollectionViewCell: UICollectionViewCell {
-    static let identifier = "HourlyWeatherCollectionViewCell"
     
     let viewModel = HourlyWeatherCollectionViewModel()
     
